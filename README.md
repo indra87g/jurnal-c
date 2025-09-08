@@ -8,8 +8,8 @@
     - `%s` untuk array of char
     - `%x` atau `%X` untuk hexadecimal
 - `char` adalah datatype untuk satu karakter. gunakan `char variabel[]` atau `char *variabel` untuk lebih dari satu karakter.
-- `return 0` menandakan program sukses, sedangkan `return 1` berlaku sebaliknya
-- function void tidak bisa menggunakan `return`. hanya function `main` yang bisa menggunakannya
+- `return 0` (atau `EXIT_SUCCESS`) menandakan program sukses, sedangkan nilai non-zero (seperti `1` atau `EXIT_FAILURE`) menandakan error.
+- function `void` tidak bisa mengembalikan nilai (`return value;`), tapi bisa menggunakan `return;` untuk keluar dari fungsi lebih awal. Semua fungsi non-void **harus** mengembalikan nilai yang sesuai dengan tipe datanya.
 
 ## 17-08-2025
 - Ada dua cara membuat const:
@@ -41,8 +41,8 @@
     - Selalu gunakan `fclose` di akhir file handler untuk menghindari memory leak
     - Untuk file besar, gunakan `fread` dan `fwrite`
 - `typedef` digunakan untuk memberikan alias ke sebuah tipe data
-    - Gunakan `typedef unsigned` untuk memberikan alias ke tipe data bawaan
-    - Ketika bikin `typedef` untuk array, nama tipenya harus diletakkan setelah setelah ukuran array
+    - Contoh: `typedef unsigned int uint;`
+    - Ketika membuat `typedef` untuk array, nama tipe diletakkan **sebelum** ukuran array. Contoh: `typedef int MyIntArray[10];`
 
 ## 21-08-2025
 - `Makefile` adalah automation script untuk C/C++
@@ -58,8 +58,8 @@
     ```
 
 ## 22-08-2025
-- `malloc` digunakan untuk membuat variabel dengan ukuran sebanyak data yang dimasukkan user
-    - Setelah digunakan, memori dibebaskan dengan `free(variabel)`
+- `malloc` digunakan untuk mengalokasikan sejumlah byte memori secara dinamis di heap. Fungsi ini mengembalikan pointer ke memori yang dialokasikan tersebut.
+    - Setelah digunakan, memori wajib dibebaskan dengan `free(variabel)` untuk mencegah memory leak.
 - `pragma once` adalah include guard yang lebih ringkas dan modern daripada `ifndef`
 
 ## 24-08-2025
@@ -67,8 +67,8 @@
 - `enum` adalah tipe data untuk membuat daftar label yang akan disimpan sebagai angka
 ## 02-09-2025
 - `static` digunakan untuk mengubah scope dan lifetime dari sebuah variabel/fungsi
-    - jika digunakan secara global, maka variabel/fungsi yg bersangkutan akan diisolasi
-    - jika digunakan secara lokal, maka variabel yg bersangkutan nilainya akan disimpan, bahkan saat sudah keluar dari fungsi
+    - jika digunakan pada variabel/fungsi global, maka scope-nya akan terbatas hanya pada file (.c) tempat ia didefinisikan (internal linkage).
+    - jika digunakan pada variabel lokal di dalam fungsi, nilainya akan dipertahankan di antara pemanggilan fungsi (lifetime-nya sepanjang eksekusi program).
 - `struct` bisa diletakan di struct lain (nested), maupun dikumpulkan dalam sebuah array (array of struct)
 - Dereference adalah teknik untuk mengambil isi dari alamat memori yg disimpan oleh pointer
 - Dangling pointer terjadi ketika pointer menunjuk memori yang tidak valid
