@@ -73,3 +73,8 @@
 - Dereference adalah teknik untuk mengambil isi dari alamat memori yg disimpan oleh pointer
 - Dangling pointer terjadi ketika pointer menunjuk memori yang tidak valid
 - Buffer overflow terjadi jika data lebih banyak daripada ukuran array 
+
+## 14-09-2025
+- `argc` dan `argv` digunakan untuk mengakses argument command line
+    - `argc` untuk menyimpan jumlah argument 
+    - `argv` untuk mengakses nilai (string) dari setiap argument
