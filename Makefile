@@ -31,5 +31,6 @@ $(BUILDDIR)/%.o: $(SRCDIR)/%.c
 
 clean:
 	$(RM) $(BUILDDIR) $(BINDIR)
+	$(RM) data.txt data.json player_data.json
 format:
 	clang-format -i $(wildcard */*.c) $(wildcard */*.h)

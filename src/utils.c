@@ -6,8 +6,6 @@
 
 #include "cJSON.h"
 
-void hello(str myName, str yourName) { printf("%s: Hello %s!\n", myName, yourName); }
-
 void sum_form() {
     int num1, num2, sum;
     printf("Enter first number: ");
@@ -49,14 +47,14 @@ void newjson(str filename, str name, int age) {
     free(json_str);     
 }
 
-void newfile(str filename, str message) {
+void newfile(str filename, str myName, str yourName) {
     FILE *fp = fopen(filename, "w");
     if (fp == NULL) {
         perror("Error opening file");
         return; 
     }
 
-    fprintf(fp, "%s", message);
+    fprintf(fp, "%s: Hello, %s!", myName, yourName);
     fclose(fp);
 }
 

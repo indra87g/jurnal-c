@@ -1,7 +1,7 @@
 #include "calculate.h"
 
-#include <stdio.h>
 #include <limits.h>
+#include <stdio.h>
 
 // Implementasi fungsi-fungsi dasar matematika.
 int sum(int a, int b) { return a + b; }

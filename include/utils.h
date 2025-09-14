@@ -6,10 +6,9 @@
 typedef char* str;
 
 // Deklarasi fungsi utilitas
-void hello(str myName, str yourName);
 void sum_form();
 void newjson(str filename, str name, int age);
-void newfile(str filename, str message);
+void newfile(str filename, str myName, str yourName);
 void minecraft_coords(str place);
 void openfile(str filename);
 int factorial(int num);
