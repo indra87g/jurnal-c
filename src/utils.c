@@ -1,8 +1,9 @@
 #include "utils.h"
 
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
 #include "cJSON.h"
 
@@ -44,14 +45,14 @@ void newjson(str filename, str name, int age) {
     }
 
     cJSON_Delete(root);
-    free(json_str);     
+    free(json_str);
 }
 
 void newfile(str filename, str myName, str yourName) {
     FILE *fp = fopen(filename, "w");
     if (fp == NULL) {
         perror("Error opening file");
-        return; 
+        return;
     }
 
     fprintf(fp, "%s: Hello, %s!", myName, yourName);
@@ -74,7 +75,7 @@ void openfile(str filename) {
 
 void minecraft_coords(str place) {
     Coords coordinates[3] = {{100, 75, 100}, {125, 70, 150}, {1250, 80, 500}};
-    Coords selected = {0,0,0};
+    Coords selected = {0, 0, 0};
     str place_now = "Unknown";
 
     if (strcmp(place, "home") == 0) {
@@ -89,16 +90,37 @@ void minecraft_coords(str place) {
     }
 
     if (strcmp(place_now, "Unknown") == 0) {
-         printf("Location '%s' not found.\n", place);
+        printf("Location '%s' not found.\n", place);
     } else {
-         printf("Your %s location: %d %d %d\n", place_now, selected.x, selected.y, selected.z);
+        printf("\x1b[32mYour %s location: %d %d %d\n", place_now, selected.x, selected.y,
+               selected.z);
     }
 }
+
+void wait() {
+    printf(" Wait a minute -");
+    while (1) {
+        usleep(200000);
+        printf("\b\\");
+        fflush(stdout);
+        usleep(200000);
+        printf("\b!");
+        fflush(stdout);
+        usleep(200000);
+        printf("\b/");
+        fflush(stdout);
+        usleep(200000);
+        printf("\b-");
+        fflush(stdout);
+    }
+}
+
+void print(str string) { printf("\x1b[32m%s\x1b[39m", string); }
 
 int factorial(int num) {
     if (num < 0) {
         fprintf(stderr, "Factorial is not defined for negative numbers.\n");
-        return -1; 
+        return -1;
     }
     if (num == 0 || num == 1) {
         return 1;

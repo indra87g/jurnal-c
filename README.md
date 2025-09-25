@@ -78,3 +78,10 @@
 - `argc` dan `argv` digunakan untuk mengakses argument command line
     - `argc` untuk menyimpan jumlah argument 
     - `argv` untuk mengakses nilai (string) dari setiap argument
+- `strcmp` adalah bagian dari `string.h` yang berfungsi untuk membandingkan string
+- 
+## 24-09-2025
+- `usleep()` bagian dari `unistd.h` yang berfungsi untuk menunda eksekusi program untuk jangka waktu tertentu. Diukur dengan satuan mikrodetik
+- 
+## 25-09-2025
+- "ANSI Escape Sequences" bisa digunakan untuk mewarnai teks yang muncul di terminal
