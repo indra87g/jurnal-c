@@ -82,6 +82,10 @@
 - 
 ## 24-09-2025
 - `usleep()` bagian dari `unistd.h` yang berfungsi untuk menunda eksekusi program untuk jangka waktu tertentu. Diukur dengan satuan mikrodetik
-- 
+
 ## 25-09-2025
 - "ANSI Escape Sequences" bisa digunakan untuk mewarnai teks yang muncul di terminal
+
+## 02-10-2025
+- "Variadic" adalah fungsi yang dapat menerima sejumlah variabel argumen
+  - `vprintf` mirip dengan `printf()`, tetapi argumen-argumennya diinisialisasi ke dalam satu argumen tipe `va_list`
