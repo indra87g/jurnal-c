@@ -98,7 +98,7 @@ void minecraft_coords(str place) {
 }
 
 void wait() {
-    printf(" Wait a minute -");
+    printf("Wait a minute -");
     while (1) {
         usleep(200000);
         printf("\b\\");
@@ -112,19 +112,5 @@ void wait() {
         usleep(200000);
         printf("\b-");
         fflush(stdout);
-    }
-}
-
-void print(str string) { printf("\x1b[32m%s\x1b[39m", string); }
-
-int factorial(int num) {
-    if (num < 0) {
-        fprintf(stderr, "Factorial is not defined for negative numbers.\n");
-        return -1;
-    }
-    if (num == 0 || num == 1) {
-        return 1;
-    } else {
-        return num * factorial(num - 1);
     }
 }

@@ -12,8 +12,6 @@ void newfile(str filename, str myName, str yourName);
 void minecraft_coords(str place);
 void openfile(str filename);
 void wait();
-void print(str string);
-int factorial(int num);
 
 // struct untuk merepresentasikan tanggal
 typedef struct {

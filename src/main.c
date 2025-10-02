@@ -4,8 +4,10 @@
 
 #include "calculate.h"
 #include "utils.h"
+#include "colorama.h"
 
 int main(int argc, char *argv[]) {
+    init_colorama();
     int num1, num2, result, factorialResult, circleAreaResult, player_age;
     float float1 = 20.5;
 
@@ -20,9 +22,7 @@ int main(int argc, char *argv[]) {
     str pythonCode = "def main(name):\n\treturn name\n";
 
     if (argc > 1) {
-        if (strcmp(argv[1], "mcoords") == 0) {
-            minecraft_coords("home");
-        } else if (strcmp(argv[1], "player") == 0) {
+        if (strcmp(argv[1], "player") == 0) {
             Player player = {1, {7, 5, 2009}, "Indra", 97.5};
             player_age = 2025 - player.birthday.year;
             newjson("player_data.json", player.name, player_age);
@@ -33,10 +33,11 @@ int main(int argc, char *argv[]) {
         } else if (strcmp(argv[1], "math") == 0) {
             printf("Multiply: %d\n", result);
             printf("Circle Area: %d\n", circleAreaResult);
-            printf("Factorial Result: %d\n", factorialResult);
+            printf("Factorial: %d\n", factorialResult);
         } else if (strcmp(argv[1], "etc") == 0) {
             printf("FakeArray: [%d, %f]\n", num1, float1);
-            print(pythonCode);
+            print(STYLE_BRIGHT, FOREGROUND_CYAN, BACKGROUND_YELLOW, pythonCode);
+            minecraft_coords("home");
 
             for (int i = 0; i < ARRAY_LENGTH; i++) {
                 printf("RealArray: %d\n", realArray[i]);
@@ -47,5 +48,6 @@ int main(int argc, char *argv[]) {
         perror("Enter the arguments!");
         exit(1);
     }
+    deinit_colorama();
     return 0;
 }

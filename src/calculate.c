@@ -20,4 +20,15 @@ int divide(int a, int b) {
 }
 
 int calculate(int a, int b, int (*op)(int, int)) { return op(a, b); }
+int factorial(int num) {
+    if (num < 0) {
+        fprintf(stderr, "Factorial is not defined for negative numbers.\n");
+        return -1;
+    }
+    if (num == 0 || num == 1) {
+        return 1;
+    } else {
+        return num * factorial(num - 1);
+    }
+}
 float circleArea(int radius) { return M_PI * radius * radius; }
