@@ -11,7 +11,7 @@ void init_colorama() {
 }
 
 void deinit_colorama() {
-    printf("%s", STYLE_RESET_ALL);
+    printf("%s", S_RESET_ALL);
     colorama_initialized = 0;
 }
 
@@ -38,6 +38,6 @@ void print(const char* style, const char* foreground, const char* background, co
         printf("%s", foreground);
     }
     vprintf(format, args);;
-    printf("%s", STYLE_RESET_ALL);
+    printf("%s", S_RESET_ALL);
     va_end(args);
 }

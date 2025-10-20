@@ -92,8 +92,7 @@ void minecraft_coords(str place) {
     if (strcmp(place_now, "Unknown") == 0) {
         printf("Location '%s' not found.\n", place);
     } else {
-        printf("\x1b[32mYour %s location: %d %d %d\n", place_now, selected.x, selected.y,
-               selected.z);
+        printf("Your %s location: %d %d %d\n", place_now,selected.x, selected.y, selected.z);
     }
 }
 

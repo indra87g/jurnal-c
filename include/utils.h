@@ -1,5 +1,4 @@
 #pragma once
-#include <stdlib.h>
 
 #define ARRAY_LENGTH 6
 

@@ -3,11 +3,11 @@
 ## 16-08-2025
 - Ada beberapa format specifier:
     - `%d` untuk integer
-    - `%f` untuk float dan double
+    - `%f` untuk float dan `%lf` untuk double
     - `%c` untuk char dengan karakter tunggal
     - `%s` untuk array of char
     - `%x` atau `%X` untuk hexadecimal
-- `char` adalah datatype untuk satu karakter. gunakan `char variabel[]` atau `char *variabel` untuk lebih dari satu karakter.
+- `char` adalah datatype string untuk satu karakter. gunakan `char variabel[]` atau `char *variabel` untuk membuat array of char.
 - `return 0` (atau `EXIT_SUCCESS`) menandakan program sukses, sedangkan nilai non-zero (seperti `1` atau `EXIT_FAILURE`) menandakan error.
 - function `void` tidak bisa mengembalikan nilai (`return value;`), tapi bisa menggunakan `return;` untuk keluar dari fungsi lebih awal. Semua fungsi non-void **harus** mengembalikan nilai yang sesuai dengan tipe datanya.
 
@@ -81,7 +81,20 @@
 - `strcmp` adalah bagian dari `string.h` yang berfungsi untuk membandingkan string
 - 
 ## 24-09-2025
-- `usleep()` bagian dari `unistd.h` yang berfungsi untuk menunda eksekusi program untuk jangka waktu tertentu. Diukur dengan satuan mikrodetik
-- 
+- `usleep()` adalah bagian dari `unistd.h` yang berfungsi untuk menunda eksekusi program untuk jangka waktu tertentu. Diukur dengan satuan mikrodetik
+
 ## 25-09-2025
 - "ANSI Escape Sequences" bisa digunakan untuk mewarnai teks yang muncul di terminal
+
+## 15-10-2025
+- Pointer bisa digunakan untuk:
+    - Mengubah variabel di fungsi (pass by reference)
+    - Dynamic memory management
+    - Bekerja dengan array dan string
+    - Membuat tipe data yang kompleks (Linked List, Tree, Graph)
+    - Fungsi pointer
+
+## 19-10-2025
+- `stdlib.h` memiliki fungsi fungsi untuk konversi tipe data:
+    - `atoi()` berfungsi untuk konversi char ke integer
+    - `atof()` berfungsi untuk konversi char ke float
