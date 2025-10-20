@@ -1,5 +1,7 @@
 # The C Journal
 
+[![wakatime](https://wakatime.com/badge/user/e3628b6b-08c8-497a-a679-c268fa16d35e/project/39fd7687-871d-4df9-a3b6-e3b944d769bc.svg)](https://wakatime.com/badge/user/e3628b6b-08c8-497a-a679-c268fa16d35e/project/39fd7687-871d-4df9-a3b6-e3b944d769bc)
+
 ## 16-08-2025
 - Ada beberapa format specifier:
     - `%d` untuk integer
