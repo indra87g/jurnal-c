@@ -1,0 +1,3 @@
+[submodule "mmorpgc"]
+	path = mmorpgc
+	url = https://github.com/indra87g/mmorpgc
